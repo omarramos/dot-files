@@ -1,0 +1,35 @@
+# Shell
+#alias cdr="cd ~/../.."
+alias ls="ls -a"
+alias reload="source ~/.bashrc"
+alias cleardns="dscacheutil -flushcache"
+
+# Rails
+alias r="rails $1 $2 $3 $4 $5 $6 $7"
+alias dbm="rake db:migrate"
+
+
+# Git
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias ghist="git log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short"
+alias ghist-last="ghist --max-count=1"
+
+
+
+# Mongo
+alias mongo="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf"
+
+function dev-wallpulse {
+	cd ~/Rails/wallpulse/
+	rvm 1.9.2@wallpulse
+}
+
+function mkdircd {
+	mkdir $1
+	cd $1
+}
+
+alias wp-d="git push heroku master"
+alias wp-start="terminitor start wallpulse"

@@ -1,0 +1,11 @@
+[diff]
+    tool = chdiff
+ 
+[difftool]
+	prompt = false
+
+[difftool "chdiff"]
+	cmd = /usr/bin/env chdiff "$LOCAL" "$REMOTE"
+[user]
+	name = sugarcoded
+	email = omar@sugarcoded.co
