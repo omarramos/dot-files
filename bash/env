@@ -1,4 +1,4 @@
-export EDITOR="mate -w"
+export EDITOR="vim"
 export PATH=$PATH:~/bin
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.

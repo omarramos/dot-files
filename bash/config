@@ -1,1 +1,2 @@
 PS1="\n\u:\w  \n-> "
+set -o vi
