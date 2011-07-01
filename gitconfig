@@ -1,5 +1,5 @@
 [diff]
-    tool = chdiff
+  tool = chdiff
  
 [difftool]
 	prompt = false
@@ -10,3 +10,6 @@
 [user]
 	name = sugarcoded
 	email = omar@sugarcoded.co
+
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset

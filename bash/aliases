@@ -24,14 +24,15 @@ alias mongo="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.c
 
 function dev-wp {
   cd ~/Rails/wallpulse/
-    #rvm 1.9.2@wallpulse
+  rvm 1.9.2@wallpulse
 }
 
-function mkdircd {
-  mkdir $1
-    cd $1
-}
-
-alias wp-d="git push heroku master"
 alias wp-start="terminitor start wallpulse"
 
+# Bundler aliases
+alias b="bundle"
+alias bi="b install --path vendor"
+alias bil="bi --local"
+alias bu="b update"
+alias be="b exec"
+alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
