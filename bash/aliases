@@ -23,7 +23,7 @@ alias ghist-last="ghist --max-count=1"
 alias mongo="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf"
 
 function dev-wp {
-  cd ~/Rails/wallpulse/
+  cd ~/Dev/Work/wallpulse/
   rvm 1.9.2@wallpulse
 }
 

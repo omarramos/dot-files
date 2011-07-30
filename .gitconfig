@@ -1,15 +1,15 @@
 [diff]
   tool = chdiff
- 
+
 [difftool]
-	prompt = false
+  prompt = false
 
 [difftool "chdiff"]
-	cmd = /usr/bin/env chdiff "$LOCAL" "$REMOTE"
+  cmd = /usr/bin/env chdiff "$LOCAL" "$REMOTE"
 
 [user]
-	name = sugarcoded
-	email = omar@sugarcoded.co
+  name = sugarcoded
+  email = omar@sugarcoded.co
 
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
