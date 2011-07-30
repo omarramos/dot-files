@@ -27,7 +27,10 @@ function dev-wp {
   rvm 1.9.2@wallpulse
 }
 
-alias wp-start="terminitor start wallpulse"
+function wp-start {
+  cd ~/Dev/work/wallpulse/
+  terminitor start
+}
 
 # Bundler aliases
 alias b="bundle"
