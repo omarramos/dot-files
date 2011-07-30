@@ -1,11 +1,8 @@
-[diff]
-  tool = chdiff
-
 [difftool]
   prompt = false
 
-[difftool "chdiff"]
-  cmd = /usr/bin/env chdiff "$LOCAL" "$REMOTE"
+[merge]
+  tool = vimdiff
 
 [user]
   name = sugarcoded
@@ -14,5 +11,6 @@
 [format]
   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
+[diff]
 [color]
   ui = auto
