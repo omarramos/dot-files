@@ -9,26 +9,16 @@ alias r="rails $1 $2 $3 $4 $5 $6 $7"
 alias dbm="rake db:migrate"
 alias dbc="rails db"
 
-
-# Git
-alias gs="git status"
-alias ga="git add"
-alias gc="git commit"
-alias ghist="git log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short"
-alias ghist-last="ghist --max-count=1"
-
-
-
 # Mongo
 alias mongo="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf"
 
 function dev-wp {
-  cd ~/Dev/Work/wallpulse/
+  cd ~/Dev/Work/wallpulse/src/
   rvm 1.9.2@wallpulse
 }
 
 function wp-start {
-  cd ~/Dev/work/wallpulse/
+  cd ~/Dev/work/wallpulse/src/
   terminitor start
 }
 
