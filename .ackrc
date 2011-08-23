@@ -1,0 +1,5 @@
+--type-set=coffee=.coffee
+--ignore-dir=vendor
+--ignore-dir=tags
+--ignore-dir=vcr_fixtures
+--ignore-dir=assets
