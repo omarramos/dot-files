@@ -1,6 +1,5 @@
 REPORTTIME=10
 
-export WORKON_HOME=$HOME/Envs
 source /usr/local/bin/virtualenvwrapper.sh
 
 set -o vi
