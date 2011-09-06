@@ -7,7 +7,6 @@ call vundle#rc()
 
 " Bundles
 " {{
-Bundle 'rstacruz/sparkup', {'rtp' : 'vim/'}
 Bundle 'https://github.com/tpope/vim-rails.git'
 nmap <leader>rc :RVcontroller<CR>
 nmap <leader>rm :RVmodel<CR>
@@ -19,26 +18,26 @@ Bundle "git@github.com:sugarcoded/snipmate.vim.git"
 
 
 " Syntax highlight
-Bundle 'Markdown'
+"Bundle 'Markdown'
 
 " Coffeescript!
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
+Bundle 'AutoTag'
+
 
 " Git integration
-Bundle 'git.zip'
-Bundle 'tpope/vim-fugitive'
+"Bundle 'git.zip'
+"Bundle 'tpope/vim-fugitive'
 " vim/fugitive mappings
-nmap <leader>gid :Gdiff<CR>
-nmap <leader>gis :Gstatus<CR>
-nmap <leader>gic :Gcommit<CR>
+"nmap <leader>gid :Gdiff<CR>
+"nmap <leader>gis :Gstatus<CR>
+"nmap <leader>gic :Gcommit<CR>
 
 " Utility
 Bundle 'surround.vim'
-Bundle 'Align'
 Bundle 'ack.vim'
 Bundle 'bufexplorer.zip'
-Bundle 'endwise.vim'
-"Bundle 'Conque-Shell'
+"Bundle 'endwise.vim'
 runtime macros/matchit.vim
 
 Bundle 'SuperTab-continued.'
@@ -56,7 +55,7 @@ map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
 map <leader>gj :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
 
 " NERD
@@ -65,12 +64,15 @@ Bundle 'The-NERD-Commenter'
 silent! nmap <silent> <Leader>n :NERDTreeToggle<CR>
 
 " Trying out
-Bundle 'camelcasemotion'
-Bundle 'Syntastic'
+"Bundle 'camelcasemotion'
+"Bundle 'Syntastic'
 Bundle 'pangloss/vim-javascript'
-Bundle "repeat.vim"
+"Bundle "repeat.vim"
+"Syntax highlight for jQuery
 Bundle "jQuery"
 Bundle 'taglist.vim'
+"Bundle 'rstacruz/sparkup', {'rtp' : 'vim/'}
+"
 "Tag list stuff
 let Tlist_Show_One_File=1
 let Tlist_Use_Right_Window=1
@@ -81,7 +83,7 @@ let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Inc_Winwidth=1
 let Tlist_Use_Horiz_Window=1
 nmap <leader>l :Tlist<CR>/
-Bundle 'YankRing.vim'
+"Bundle 'YankRing.vim'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -213,10 +215,10 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
-colorscheme sunburst
+"colorscheme sunburst
 set background=dark
 "set background=light
-"colorscheme solarized
+colorscheme solarized
 
 if has("gui_running")
     "tell the term has 256 colors
@@ -231,9 +233,7 @@ if has("gui_running")
     endif
 
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Inconsolata:h16
-        " make Mac's Option key behave as the Meta key
-        set invmmta
+        set guifont=monaco:h14
         try
           set transparency=0
         catch
@@ -261,12 +261,12 @@ nnoremap Y y$
 let g:syntastic_enable_signs=1
 
 "visual search mappings
-function! s:VSetSearch()
-    let temp = @@
-    norm! gvy
-    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-    let @@ = temp
-endfunction
+"function! s:VSetSearch()
+    "let temp = @@
+    "norm! gvy
+    "let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    "let @@ = temp
+"endfunction
 
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
@@ -280,11 +280,9 @@ function! SetCursorPosition()
     end
 endfunction
 
-"set shell=/bin/bash\ -i
-set shell=/bin/zsh
+"set shell=/bin/zsh
 "set shell=/bin/sh
-"set shell=/usr/local/Cellar/zsh/4.3.11/bin/zsh\ -i
-"set shell=bash
+set shell=bash
 map ; :
 noremap ;; ;
 
@@ -314,14 +312,13 @@ set directory=~/.vim/backup
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 
 nmap <leader><tab> <C-^><CR>
-nmap <leader>s :tag 
-nmap <leader>a :Ack --ignore-dir=vendor 
+"nmap <leader> :tag 
 nnoremap <silent> <leader>yr :YRShow<CR>
 set enc=utf-8
 
 "run test on the current files
-nmap <leader>dt :! fruby -I"lib:test" %<CR>
-"nmap <leader>dta :! frake test<CR>
+nmap <leader>dt :!rspec %<CR>
+nmap <leader>dat :!rspec spec<CR>
 
 set winwidth=90
 " We have to have a winheight bigger than we want to set winminheight. But if

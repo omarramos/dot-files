@@ -1,8 +1,8 @@
 [difftool]
   prompt = false
 
-[merge]
-  tool = vimdiff
+;[merge]
+  ;tool = vimdiff
 
 [user]
   name = sugarcoded
@@ -14,3 +14,12 @@
 [diff]
 [color]
   ui = auto
+
+[alias]
+  st   = status
+  aa   = add -A
+  ci   = commit
+  co   = checkout
+  ff   = merge --ff-only
+  pom  = push origin master
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
