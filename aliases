@@ -12,9 +12,22 @@ alias dbc="rails db"
 # Mongo
 alias mongo="mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf"
 
-function dev-wp {
+alias dotfiles='cd ~/Dev/personal/dotfiles'
+alias edotfiles='vim ~/Dev/personal/dotfiles'
+
+function wallpulse {
   cd ~/Dev/Work/wallpulse/src/
   rvm 1.9.2@wallpulse
+}
+
+function pftb {
+  cd ~/Dev/personal/simple_factory/play_for_the_brands
+  rvm 1.9.2@pftb
+}
+
+function fbads {
+  cd ~/Dev/work/fbads/
+  rvm 1.9.2@fbads
 }
 
 function wp-start {
