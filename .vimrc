@@ -24,7 +24,6 @@ Bundle "git@github.com:sugarcoded/snipmate.vim.git"
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'AutoTag'
 
-
 " Git integration
 "Bundle 'git.zip'
 "Bundle 'tpope/vim-fugitive'
@@ -56,7 +55,9 @@ map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
 map <leader>gs :CommandTFlush<cr>\|:CommandT spec<cr>
-map <leader>gj :CommandTFlush<cr>\|:CommandT public/javascripts<cr>
+map <leader>gj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
+map <leader>gjv :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
+map <leader>gjm :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
 
 " NERD
 Bundle 'The-NERD-tree'
@@ -82,8 +83,8 @@ let Tlist_Close_On_Select=1
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Inc_Winwidth=1
 let Tlist_Use_Horiz_Window=1
-nmap <leader>l :Tlist<CR>/
-"Bundle 'YankRing.vim'
+nmap <leader>l :Tlist<CR>
+Bundle 'YankRing.vim'
 
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -215,10 +216,12 @@ set ttymouse=xterm2
 "hide buffers when not displayed
 set hidden
 
-"colorscheme sunburst
+set t_Co=256 " 256 colors
 set background=dark
 "set background=light
-colorscheme solarized
+"colorscheme solarized
+"colorscheme sunburst
+colorscheme ir_black
 
 if has("gui_running")
     "tell the term has 256 colors
@@ -260,14 +263,6 @@ nnoremap Y y$
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
-"visual search mappings
-"function! s:VSetSearch()
-    "let temp = @@
-    "norm! gvy
-    "let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-    "let @@ = temp
-"endfunction
-
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
 autocmd BufReadPost * call SetCursorPosition()
@@ -287,7 +282,6 @@ map ; :
 noremap ;; ;
 
 "Clear highlight
-nnoremap <leader>h :noh<return>
 :nnoremap <CR> :nohlsearch<cr>
 
 set shortmess=atI
@@ -300,7 +294,7 @@ vmap <C-j> ]egv
 set smartcase
 set ignorecase
 
-set list listchars=trail:.
+set list listchars=trail:␣
 nmap <leader>p :put<CR>==
 set tags=./tags;
 set clipboard=unnamed
