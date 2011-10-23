@@ -3,3 +3,4 @@ REPORTTIME=10
 source /usr/local/bin/virtualenvwrapper.sh
 
 set -o vi
+unsetopt correct_all
